@@ -20,7 +20,7 @@ public class Main {
                 System.out.println("Нужно ввести целое число");
             }
         }
-        Item item = new Item();
+        Item item = new Item(scanner);
         Calculate calculate = new Calculate();
         Format formatter = new Format();
         while(true) {
@@ -34,8 +34,8 @@ public class Main {
                 break;
             }
         }
-        System.out.println("Итог - "+formatter.price(calculate.finalPrice));
-        System.out.print("Сумма с каждого - "+formatter.price(calculate.finalPrice/(float)countPerson)+" ");
+        System.out.printf("Итог - %s\n",formatter.price(calculate.finalPrice));
+        System.out.printf("Сумма с каждого - %s ",formatter.price(calculate.finalPrice/(float)countPerson));
         System.out.println(formatter.ruble(calculate.finalPrice/(float)countPerson));
     }
 }

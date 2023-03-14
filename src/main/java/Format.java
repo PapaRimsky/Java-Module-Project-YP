@@ -1,24 +1,21 @@
 public class Format {
     String line="";
     String ruble(float numb){
-        int i = (int)Math.floor(numb);
-        if(i<21){
-            compare(i);
+        int i = (int)numb;
+        if(i%100>=11 && i%100<15){
+            line="рублей";
         }else{
-            compare(i%10);
+            if(i%10==0){
+                line="рублей";
+            }else if(i%10==1){
+                line="рубль";
+            }else if(i%10<5){
+                line="рубля";
+            }else{
+                line="рублей";
+            }
         }
         return line;
-    }
-    void compare(int i){
-        if(i==0){
-            line="рублей";
-        }else if(i==1){
-            line="рубль";
-        }else if(i<5){
-            line="рубля";
-        }else{
-            line="рублей";
-        }
     }
     String price(float numb){
         String template = "%.2f";

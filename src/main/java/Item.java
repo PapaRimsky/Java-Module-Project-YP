@@ -1,7 +1,10 @@
 import java.util.Scanner;
 public class Item {
 
-    Scanner scanner = new Scanner(System.in);
+    Scanner scanner;
+    Item(Scanner outScanner){
+        scanner=outScanner;
+    }
     String getName(){
         System.out.println("Введите название товара");
         return scanner.next().trim();
